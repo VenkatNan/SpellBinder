@@ -12,11 +12,9 @@ app.use(express.json())
 
 app.use(express.urlencoded({ extended: true }))
 app.use('/users', userController)
-
+const secret = process.env.SECRET || "mongodb+srv://VenkatNan:Parvathi22@venkatnan.bied5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose
-  .connect(
-    "mongodb+srv://VenkatNan:Parvathi22@venkatnan.bied5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" ,
-    {
+  .connect(secret,{
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }
