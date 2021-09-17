@@ -30,7 +30,7 @@ const NewCharacter = () => {
     }
 
     return (
-        <div class='newChar'>
+        <div className='newChar'>
             <h1>New Character</h1>
             <div>
                 <form onSubmit={handleSubmit}>

@@ -8,9 +8,6 @@ import SpecificCharacter from './Components/Users/specificCharacter'
 import NewChar from './Components/Users/newCharacter'
 import EditChar from './Components/Users/EditChar'
 
-
-
-
 function App() {
   const [charData, setCharData] = useState([]);
 

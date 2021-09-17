@@ -7,12 +7,11 @@ const Characters = (props) => {
 
     return (
         
-        <div class='characterCard'>
+        <div className='characterCard'>
             <h1>Characters</h1>
             <section>
             {props.character.map((char) => (
-                <div> 
-                 <div className="card">
+                 <div className="card" key={char._id}>
                      
                  <Link to={`/users/details/${char.name}`}>
                    
@@ -26,9 +25,6 @@ const Characters = (props) => {
                    </div>
                    </Link>
                  </div>
-                 
-               
-               </div>
                
                 ))
             }

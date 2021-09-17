@@ -35,11 +35,17 @@ const EditChar = ({characters, match, setCharData}) => {
 
   const handleDelete = (e) => {
     e.preventDefault()
-    console.log(editChar);
+    axios.delete(`http://localhost:4000/users/delete/${editChar._id}`)
+      .then((res) => {   
+        if (res.data.message === 'success') {
+            setEditChar(res.data.characters);
+            history.push('/')
+        }
+    })
 }
 
     return (
-        <div class='editChar'>
+        <div className='editChar'>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input id='name' placeholder='Character Name' type="text" onChange={handleChange} value={editChar.name}/>
