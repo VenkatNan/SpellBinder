@@ -26,6 +26,7 @@ router.get('/details/:id', (req, res, next) => {
  //c 
 
 router.post('/new', (req,res, next)=> {
+    console.log(req.body)
     User.create(req.body)
     .then(characters => console.log(characters))
     .catch(next)

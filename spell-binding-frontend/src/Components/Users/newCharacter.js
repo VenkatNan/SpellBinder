@@ -14,19 +14,20 @@ const NewCharacter = () => {
     }
 
     const [character, setChar] = useState(initialState)
-    let history = useHistory()
+
+
     const handleChange = (event) => {
         setChar({...character,[event.target.id]: event.target.value})
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        console.log(character);
         axios.post(`http://localhost:4000/users/new`)
         .then(res => {
           setChar(res.data)
           
         })
-        history.push('/')
     }
 
     return (
